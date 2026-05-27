@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusList | DOM To-Do App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Mini DOM Project</p>
+          <h1>FocusList</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button" id="themeToggle" type="button" title="Toggle theme" aria-label="Toggle theme">
+            <i data-lucide="sun"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="workspace" aria-live="polite">
+        <section class="board" aria-labelledby="boardTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Today</p>
+              <h2 id="boardTitle">Task Board</h2>
+            </div>
+            <span class="task-total" id="taskTotal">0 tasks</span>
+          </div>
+
+          <form class="task-composer" id="taskForm">
+            <label class="sr-only" for="taskInput">Task title</label>
+            <input id="taskInput" type="text" maxlength="80" placeholder="Add a focused task" autocomplete="off" required />
+
+            <label class="sr-only" for="prioritySelect">Priority</label>
+            <select id="prioritySelect" aria-label="Priority">
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="low">Low</option>
+            </select>
+
+            <label class="sr-only" for="dueDate">Due date</label>
+            <input id="dueDate" type="date" aria-label="Due date" />
+
+            <button class="primary-button" id="submitButton" type="submit">
+              <i data-lucide="plus"></i>
+              <span>Add Task</span>
+            </button>
+            <button class="ghost-button hidden" id="cancelEdit" type="button">
+              <i data-lucide="x"></i>
+              <span>Cancel</span>
+            </button>
+          </form>
+
+          <div class="toolbar">
+            <label class="search-box" for="searchInput">
+              <i data-lucide="search"></i>
+              <input id="searchInput" type="search" placeholder="Search tasks" />
+            </label>
+
+            <div class="segments" role="group" aria-label="Task filter">
+              <button class="segment active" type="button" data-filter="all">All</button>
+              <button class="segment" type="button" data-filter="active">Active</button>
+              <button class="segment" type="button" data-filter="done">Done</button>
+            </div>
+
+            <label class="sr-only" for="sortSelect">Sort tasks</label>
+            <select id="sortSelect" aria-label="Sort tasks">
+              <option value="created">Newest</option>
+              <option value="priority">Priority</option>
+              <option value="due">Due date</option>
+            </select>
+          </div>
+
+          <ul class="task-list" id="taskList"></ul>
+
+          <div class="empty-state hidden" id="emptyState">
+            <div class="empty-mark" aria-hidden="true">
+              <i data-lucide="clipboard-check"></i>
+            </div>
+            <h3>No matching tasks</h3>
+            <p>Adjust your filters or add a new item.</p>
+          </div>
+        </section>
+
+        <aside class="insights" aria-label="Task insights">
+          <div class="progress-area">
+            <div class="progress-copy">
+              <p class="eyebrow">Progress</p>
+              <strong id="progressLabel">0%</strong>
+            </div>
+            <div class="progress-ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <circle class="track" cx="60" cy="60" r="50"></circle>
+                <circle class="meter" id="progressMeter" cx="60" cy="60" r="50"></circle>
+              </svg>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-tile">
+              <span id="activeCount">0</span>
+              <small>Active</small>
+            </div>
+            <div class="stat-tile">
+              <span id="doneCount">0</span>
+              <small>Done</small>
+            </div>
+            <div class="stat-tile">
+              <span id="highCount">0</span>
+              <small>High</small>
+            </div>
+            <div class="stat-tile">
+              <span id="dueSoonCount">0</span>
+              <small>Due Soon</small>
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <button class="ghost-button" id="clearDone" type="button">
+              <i data-lucide="archive-x"></i>
+              <span>Clear Done</span>
+            </button>
+            <button class="ghost-button" id="resetDemo" type="button">
+              <i data-lucide="refresh-cw"></i>
+              <span>Reset Demo</span>
+            </button>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
