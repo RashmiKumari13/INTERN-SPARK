@@ -181,6 +181,8 @@ h1 {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   background: var(--surface-soft);
+  color: transparent;
+  font-size: 0;
 }
 
 .country-body {
