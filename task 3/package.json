@@ -1,0 +1,8 @@
+{
+  "name": "country-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node static-server.cjs"
+  }
+}

@@ -1,0 +1,244 @@
+:root {
+  color-scheme: light;
+  --ink: #17212b;
+  --muted: #596775;
+  --line: #d9e0e7;
+  --surface: #ffffff;
+  --surface-soft: #f4f7f9;
+  --accent: #096f6b;
+  --accent-dark: #064f4d;
+  --warning: #9b3f1d;
+  --shadow: 0 18px 40px rgba(22, 33, 43, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(9, 111, 107, 0.1), transparent 34%),
+    linear-gradient(315deg, rgba(199, 78, 42, 0.12), transparent 32%),
+    var(--surface-soft);
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1;
+}
+
+.intro {
+  max-width: 640px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.summary-panel {
+  min-width: 176px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.summary-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.summary-label {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(180px, 260px) auto;
+  gap: 14px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.field input,
+.field select,
+.refresh-button {
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 0 14px;
+}
+
+.field input:focus,
+.field select:focus,
+.refresh-button:focus-visible {
+  outline: 3px solid rgba(9, 111, 107, 0.22);
+  outline-offset: 2px;
+}
+
+.refresh-button {
+  padding: 0 20px;
+  cursor: pointer;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.refresh-button:hover {
+  background: var(--accent-dark);
+}
+
+.refresh-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.status {
+  min-height: 48px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.status.error {
+  color: var(--warning);
+}
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.country-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(22, 33, 43, 0.06);
+}
+
+.flag {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--surface-soft);
+}
+
+.country-body {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+}
+
+.region {
+  margin: 0 0 7px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.country-card h2 {
+  margin: 0;
+  font-size: 1.22rem;
+  line-height: 1.25;
+}
+
+.facts {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.facts dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    width: min(100% - 24px, 1180px);
+    padding: 24px 0;
+  }
+
+  .masthead,
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-panel {
+    min-width: 0;
+  }
+}

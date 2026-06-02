@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3 API Project Report</title>
+    <style>
+      :root {
+        --ink: #1b2733;
+        --muted: #5d6875;
+        --line: #d8e0e6;
+        --accent: #096f6b;
+        --surface: #f6f8fa;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      main {
+        max-width: 840px;
+        margin: 0 auto;
+        padding: 34px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 10px;
+        line-height: 1.2;
+      }
+
+      h1 {
+        color: var(--accent);
+        font-size: 30px;
+      }
+
+      h2 {
+        margin-top: 26px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--line);
+        font-size: 18px;
+      }
+
+      h3 {
+        margin-top: 14px;
+        font-size: 14px;
+      }
+
+      p {
+        margin: 0 0 10px;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      ul {
+        margin: 0 0 12px 18px;
+        padding: 0;
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 7px 12px;
+        margin: 18px 0;
+        padding: 14px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+      }
+
+      .label {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      code,
+      pre {
+        font-family: Consolas, "Courier New", monospace;
+      }
+
+      pre {
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+        margin: 8px 0 16px;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #f1f4f6;
+        font-size: 10.5px;
+      }
+
+      figure {
+        break-inside: avoid;
+        margin: 14px 0 20px;
+      }
+
+      img {
+        width: 100%;
+        max-height: 520px;
+        object-fit: contain;
+        border: 1px solid var(--line);
+      }
+
+      figcaption {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+
+      @page {
+        margin: 16mm;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Task 3: Public REST API Project Report</h1>
+      <p>
+        This document summarizes the Country Explorer project created for the
+        task requirement: use a public REST API to fetch and display data
+        dynamically on a web page.
+      </p>
+
+      <section class="meta" aria-label="Project links">
+        <span class="label">Project Name</span>
+        <span>Country Explorer</span>
+        <span class="label">Local Folder</span>
+        <span>F:\WEB DEVLOPMENT\INTERNSPARK\task 3</span>
+        <span class="label">Hosted Live Project</span>
+        <span><a href="#">Add deployed project URL here</a></span>
+        <span class="label">GitHub Repository</span>
+        <span><a href="#">Add GitHub repository URL here</a></span>
+      </section>
+
+      <h2>API Used</h2>
+      <p>
+        The project uses the public
+        <a href="https://restcountries.com/">REST Countries API</a>. The app
+        requests selected fields for all countries:
+      </p>
+      <pre>https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags,currencies,cca3</pre>
+      <p>
+        The response includes country names, capitals, regions, populations,
+        flags, and currencies. The page sorts and renders the returned data as
+        cards, then updates the visible list when the user searches or filters
+        by region.
+      </p>
+
+      <h2>Features Implemented</h2>
+      <ul>
+        <li>Fetch API request to a public REST endpoint</li>
+        <li>Dynamic country cards generated from API data</li>
+        <li>Loading state while the request is in progress</li>
+        <li>Error state if the API request fails</li>
+        <li>Search by country name, capital, or region</li>
+        <li>Region filter generated from the API response</li>
+        <li>Responsive layout for desktop and mobile screens</li>
+      </ul>
+
+      <h2>Commands Used</h2>
+      <pre>node --check script.js
+node --check static-server.cjs
+npm start</pre>
+
+      <h2>Key Code Snippets</h2>
+      <h3>Fetch API Request</h3>
+      <pre>async function fetchCountries() {
+  setLoading(true);
+  setStatus("Loading country data...");
+
+  try {
+    const response = await fetch(API_URL);
+
+    if (!response.ok) {
+      throw new Error(`REST Countries returned ${response.status}`);
+    }
+
+    const data = await response.json();
+    countries = data.sort((a, b) =>
+      getCountryName(a).localeCompare(getCountryName(b)),
+    );
+
+    populateRegions();
+    renderCountries();
+  } catch (error) {
+    countries = [];
+    setStatus(
+      `Could not load countries. ${error.message}. Please try again.`,
+      "error",
+    );
+  } finally {
+    setLoading(false);
+  }
+}</pre>
+
+      <h3>Search and Region Filter</h3>
+      <pre>function getFilteredCountries() {
+  const query = searchInput.value.trim().toLowerCase();
+  const selectedRegion = regionFilter.value;
+
+  return countries.filter((country) => {
+    const searchableText = [
+      getCountryName(country),
+      getCapital(country),
+      country.region ?? "",
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    const matchesSearch = searchableText.includes(query);
+    const matchesRegion =
+      selectedRegion === "all" || country.region === selectedRegion;
+
+    return matchesSearch && matchesRegion;
+  });
+}</pre>
+
+      <section class="page-break">
+        <h2>Screenshots</h2>
+        <figure>
+          <img
+            src="screenshots/country-explorer-desktop.png"
+            alt="Country Explorer desktop screenshot"
+          />
+          <figcaption>Desktop view of the Country Explorer interface.</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="screenshots/country-explorer-mobile.png"
+            alt="Country Explorer mobile screenshot"
+          />
+          <figcaption>Mobile view showing the responsive layout.</figcaption>
+        </figure>
+      </section>
+
+      <h2>Deployment Notes</h2>
+      <p>
+        This is a static frontend project. It can be deployed on GitHub Pages,
+        Netlify, or Vercel. After deployment, replace the hosted project and
+        GitHub repository placeholders above with the final links.
+      </p>
+    </main>
+  </body>
+</html>

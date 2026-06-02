@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rashmi Kumari | Personal Portfolio & Developer Space</title>
+  <meta name="description" content="Welcome to the personal portfolio of Rashmi Kumari. A premium, mobile-friendly showcase of Frontend Development, Software Engineering projects, skills, and contact hub.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/nolan/64/developer.png">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons & FontAwesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Decorative Glowing Blurs -->
+  <div class="glow-blur-container">
+    <div class="glow-circle glow-circle-1"></div>
+    <div class="glow-circle glow-circle-2"></div>
+    <div class="glow-circle glow-circle-3"></div>
+  </div>
+
+  <!-- Sticky Glassmorphism Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom" id="mainNavbar">
+      <div class="container">
+        <a class="navbar-brand navbar-brand-custom" href="#home" id="brand-logo">
+          <i class="fa-solid fa-laptop-code me-2"></i>Rashmi.Dev
+        </a>
+        <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa-solid fa-bars-staggered"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto navbar-collapse-custom align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom active" href="#home"><i class="bi bi-house-door me-1"></i>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="#skills"><i class="bi bi-tools me-1"></i>Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="#projects"><i class="bi bi-code-square me-1"></i>Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="#contact"><i class="bi bi-envelope me-1"></i>Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+              <a class="btn-glow-primary" href="#contact"><i class="bi bi-chat-dots me-1"></i>Let's Chat</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    
+    <!-- Hero Section (Home) -->
+    <section id="home" class="d-flex align-items-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 text-center text-lg-start">
+            <span class="hero-tag"><i class="bi bi-lightning-charge-fill me-1"></i>Available for Freelance & Jobs</span>
+            <h1 class="hero-title">
+              Hi, I'm <br class="d-md-none">
+              <span class="gradient-text">Rashmi Kumari</span><br>
+              I am a <span id="typing-text" class="text-white"></span><span class="typed-cursor">|</span>
+            </h1>
+            <p class="hero-subtitle">
+              Crafting premium, fully responsive web applications and designing sleek interactive digital user experiences that blend modern technologies with intuitive aesthetics.
+            </p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+              <a class="btn-glow-primary" href="#projects"><i class="bi bi-eye me-1"></i>Explore Projects</a>
+              <a class="btn-glow-secondary" href="#contact"><i class="bi bi-download me-1"></i>Get In Touch</a>
+            </div>
+          </div>
+          
+          <div class="col-lg-5 hero-visual">
+            <div class="hero-circle-deco"></div>
+            <!-- Glassmorphic Developer Bio Card -->
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <div class="hero-avatar-wrapper">
+                  <!-- Generating visual SVG placeholder directly for modern aesthetics -->
+                  <svg class="hero-avatar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="50" fill="#0c0f17"/>
+                    <text x="50" y="55" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="bold" fill="#00f2fe" text-anchor="middle">RK</text>
+                    <path d="M20,85 C20,70 35,60 50,60 C65,60 80,70 80,85" stroke="#00f2fe" stroke-width="2" fill="none" opacity="0.3"/>
+                  </svg>
+                  <div class="hero-avatar-glow"></div>
+                </div>
+                <div>
+                  <h5 class="mb-0 text-white font-monospace">rashmi.config</h5>
+                  <small class="text-success d-flex align-items-center gap-1">
+                    <span class="spinner-grow spinner-grow-sm text-success" role="status" style="width: 8px; height: 8px;"></span>
+                    Online / Active
+                  </small>
+                </div>
+              </div>
+              <div class="hero-card-body">
+                <p class="font-monospace"><span class="text-danger">const</span> developer = {</p>
+                <p class="font-monospace ps-3"><span class="text-warning">name</span>: <span class="text-success">'Rashmi Kumari'</span>,</p>
+                <p class="font-monospace ps-3"><span class="text-warning">skills</span>: [<span class="text-success">'Frontend'</span>, <span class="text-success">'UI/UX'</span>, <span class="text-success">'Design'</span>],</p>
+                <p class="font-monospace ps-3"><span class="text-warning">location</span>: <span class="text-success">'India'</span>,</p>
+                <p class="font-monospace ps-3"><span class="text-warning">passionate</span>: <span class="text-danger">true</span></p>
+                <p class="font-monospace">};</p>
+                
+                <div class="hero-stat-box">
+                  <div class="hero-stat-item">
+                    <div class="hero-stat-value">15+</div>
+                    <div class="hero-stat-label">Projects Completed</div>
+                  </div>
+                  <div class="hero-stat-item">
+                    <div class="hero-stat-value">99%</div>
+                    <div class="hero-stat-label">Client Sat</div>
+                  </div>
+                  <div class="hero-stat-item">
+                    <div class="hero-stat-value">24/7</div>
+                    <div class="hero-stat-label">Support</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-subtitle">Core Capabilities</span>
+          <h2 class="section-title">My Tech Toolbox</h2>
+          <p class="section-desc">
+            A comprehensive overview of programming environments, libraries, frameworks, and design utilities I specialize in.
+          </p>
+        </div>
+        
+        <div class="row g-4 mt-2">
+          <!-- Skill Category 1: Frontend -->
+          <div class="col-lg-4 col-md-6">
+            <div class="glass-panel skills-card">
+              <div class="skills-category-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="skills-card-title text-white">Frontend Dev</h3>
+              
+              <!-- HTML5 -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5 / CSS3</span>
+                  <span class="skill-percentage">95%</span>
+                </div>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" data-progress="95%"></div>
+                </div>
+              </div>
+              
+              <!-- JavaScript -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript (ES6+)</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" data-progress="90%"></div>
+                </div>
+              </div>
+              
+              <!-- Bootstrap -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Bootstrap & CSS Frameworks</span>
+                  <span class="skill-percentage">88%</span>
+                </div>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" data-progress="88%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Skill Category 2: Frameworks & Libraries -->
+          <div class="col-lg-4 col-md-6">
+            <div class="glass-panel skills-card">
+              <div class="skills-category-icon">
+                <i class="fa-brands fa-react"></i>
+              </div>
+              <h3 class="skills-card-title text-white">Libraries & Backend</h3>
+              
+              <!-- ReactJS -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">ReactJS</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" data-progress="85%"></div>
+                </div>
+              </div>
+              
+              <!-- Node JS -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Node.js / Express</span>
+                  <span class="skill-percentage">78%</span>
+                </div>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" data-progress="78%"></div>
+                </div>
+              </div>
+              
+              <!-- SQL & Databases -->
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SQL / MongoDB</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="progress-bar-custom">
+                  <div class="progress-fill" data-progress="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Skill Category 3: Tools & Design Badges -->
+          <div class="col-lg-4 col-md-12">
+            <div class="glass-panel skills-card d-flex flex-column justify-content-between">
+              <div>
+                <div class="skills-category-icon" style="background: rgba(0, 242, 254, 0.08); color: var(--color-primary);">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h3 class="skills-card-title text-white">Tools & Workflow</h3>
+                <p class="text-secondary small mb-4">
+                  Leveraging agile development technologies, version control, and design platforms to ensure seamless collaboration.
+                </p>
+              </div>
+              
+              <div class="skills-grid-badges">
+                <span class="skill-badge"><i class="fa-brands fa-git-alt text-danger me-1"></i>Git & GitHub</span>
+                <span class="skill-badge"><i class="fa-brands fa-figma text-primary me-1"></i>Figma</span>
+                <span class="skill-badge"><i class="bi bi-grid-3x3-gap me-1"></i>Flexbox/Grid</span>
+                <span class="skill-badge"><i class="bi bi-terminal me-1"></i>Command Line</span>
+                <span class="skill-badge"><i class="fa-brands fa-npm text-warning me-1"></i>NPM & Bundlers</span>
+                <span class="skill-badge"><i class="bi bi-shield-check me-1"></i>SEO Optimization</span>
+                <span class="skill-badge"><i class="bi bi-palette-fill text-info me-1"></i>Responsive Design</span>
+                <span class="skill-badge"><i class="bi bi-code me-1"></i>Clean Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-subtitle">Visual Showroom</span>
+          <h2 class="section-title">My Recent Creations</h2>
+          <p class="section-desc">
+            Explore a curated selection of fully responsive applications engineered for performance, utility, and visual elegance.
+          </p>
+        </div>
+        
+        <!-- Filter Button Group -->
+        <div class="filter-btn-group" role="group" aria-label="Project filter categories">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="design">UI/UX Design</button>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div class="row g-4 justify-content-center" id="projects-grid">
+          
+          <!-- Project Card 1 (Frontend) -->
+          <div class="col-lg-4 col-md-6 project-item" data-category="frontend">
+            <article class="glass-panel project-card">
+              <div class="project-img-wrapper project-img-placeholder-1">
+                <div class="project-img-overlay">
+                  <a href="#" class="project-link-btn" aria-label="Launch project demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <!-- Custom Canvas / Tech SVG Graphic representing Developer Workspace -->
+                <svg class="project-img" viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="350" height="220" fill="transparent"/>
+                  <circle cx="175" cy="110" r="45" fill="none" stroke="rgba(0, 242, 254, 0.4)" stroke-width="2" stroke-dasharray="10 5"/>
+                  <path d="M120,110 L230,110 M175,55 L175,165" stroke="rgba(0, 242, 254, 0.2)" stroke-width="1"/>
+                  <rect x="135" y="85" width="80" height="50" rx="8" fill="rgba(13, 17, 28, 0.8)" stroke="#00f2fe" stroke-width="1.5"/>
+                  <text x="175" y="115" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="bold" fill="#00f2fe" text-anchor="middle">&lt;DEV.BOARD /&gt;</text>
+                </svg>
+              </div>
+              <div class="project-card-body">
+                <div class="project-tags">
+                  <span class="project-tag">Frontend</span>
+                  <span class="project-tag">API Integration</span>
+                </div>
+                <h3 class="project-title text-white">DevHub Analytics Dashboard</h3>
+                <p class="project-desc">
+                  A high-fidelity developer workspace interface integrating GitHub, StackOverflow, and visual system activity logs. Equipped with dynamic charting, light/dark mode toggling, and clean responsiveness.
+                </p>
+                <div class="project-card-footer">
+                  <div class="project-tech-icons">
+                    <i class="fa-brands fa-html5" title="HTML5"></i>
+                    <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+                    <i class="fa-brands fa-js" title="JavaScript"></i>
+                    <i class="fa-brands fa-bootstrap" title="Bootstrap"></i>
+                  </div>
+                  <a href="#" class="project-view-code"><i class="fa-brands fa-github"></i>View Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          
+          <!-- Project Card 2 (Full Stack) -->
+          <div class="col-lg-4 col-md-6 project-item" data-category="fullstack">
+            <article class="glass-panel project-card">
+              <div class="project-img-wrapper project-img-placeholder-2">
+                <div class="project-img-overlay">
+                  <a href="#" class="project-link-btn" aria-label="Launch project demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <svg class="project-img" viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="350" height="220" fill="transparent"/>
+                  <path d="M60,160 L290,160 M90,160 L90,60 L260,60 L260,160" stroke="rgba(168, 85, 247, 0.4)" stroke-width="2"/>
+                  <circle cx="175" cy="110" r="30" fill="rgba(13, 17, 28, 0.8)" stroke="#a855f7" stroke-width="2"/>
+                  <path d="M165,110 L185,110 M175,100 L175,120" stroke="#a855f7" stroke-width="2"/>
+                  <text x="175" y="160" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Secure Db Portal</text>
+                </svg>
+              </div>
+              <div class="project-card-body">
+                <div class="project-tags">
+                  <span class="project-tag">Full Stack</span>
+                  <span class="project-tag">Security</span>
+                </div>
+                <h3 class="project-title text-white">Smart E-Store Framework</h3>
+                <p class="project-desc">
+                  An e-commerce portal supporting dynamic inventory filters, robust cart states, user authorization middleware, and seamless integration with payment gateway sandbox structures.
+                </p>
+                <div class="project-card-footer">
+                  <div class="project-tech-icons">
+                    <i class="fa-brands fa-react" title="React"></i>
+                    <i class="fa-brands fa-node-js" title="NodeJS"></i>
+                    <i class="fa-solid fa-database" title="Database"></i>
+                  </div>
+                  <a href="#" class="project-view-code"><i class="fa-brands fa-github"></i>View Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          
+          <!-- Project Card 3 (Design) -->
+          <div class="col-lg-4 col-md-6 project-item" data-category="design">
+            <article class="glass-panel project-card">
+              <div class="project-img-wrapper project-img-placeholder-3">
+                <div class="project-img-overlay">
+                  <a href="#" class="project-link-btn" aria-label="Launch project demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <svg class="project-img" viewBox="0 0 350 220" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="350" height="220" fill="transparent"/>
+                  <path d="M50,110 Q175,30 300,110 T300,110" fill="none" stroke="rgba(0, 242, 254, 0.4)" stroke-width="2"/>
+                  <circle cx="175" cy="110" r="25" fill="rgba(13, 17, 28, 0.8)" stroke="#4facfe" stroke-width="2"/>
+                  <text x="175" y="114" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="bold" fill="#4facfe" text-anchor="middle">UI/UX</text>
+                </svg>
+              </div>
+              <div class="project-card-body">
+                <div class="project-tags">
+                  <span class="project-tag">UI/UX Design</span>
+                  <span class="project-tag">Figma</span>
+                </div>
+                <h3 class="project-title text-white">Glassmorphic Music Space</h3>
+                <p class="project-desc">
+                  An elegant visual system design for high-fidelity music streaming. Features premium glass containers, dark color hierarchies, fluid slide effects, and fully prototype-linked screens.
+                </p>
+                <div class="project-card-footer">
+                  <div class="project-tech-icons">
+                    <i class="fa-brands fa-figma" title="Figma"></i>
+                    <i class="bi bi-palette-fill" title="Visual Design"></i>
+                  </div>
+                  <a href="#" class="project-view-code"><i class="fa-brands fa-github"></i>View Assets</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-subtitle">Get In Touch</span>
+          <h2 class="section-title">Let's Connect & Collaborate</h2>
+          <p class="section-desc">
+            Have a project in mind, an opportunity to discuss, or just want to say hi? Feel free to reach out using the form or channels below.
+          </p>
+        </div>
+        
+        <div class="row g-4 mt-2">
+          <!-- Contact Info -->
+          <div class="col-lg-5">
+            <div class="glass-panel contact-info-wrapper">
+              <h3 class="contact-info-title text-white">Contact Hub</h3>
+              
+              <!-- Email -->
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="bi bi-envelope-at-fill"></i>
+                </div>
+                <div>
+                  <h4 class="contact-item-title">Email Me</h4>
+                  <a href="mailto:rashmikumari132001@gmail.com" class="contact-item-value">rashmikumari132001@gmail.com</a>
+                </div>
+              </div>
+              
+              <!-- Location -->
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div>
+                  <h4 class="contact-item-title">Location</h4>
+                  <span class="contact-item-value">Patna, Bihar, India</span>
+                </div>
+              </div>
+              
+              <!-- Remote Support -->
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="bi bi-globe2"></i>
+                </div>
+                <div>
+                  <h4 class="contact-item-title">Work Preference</h4>
+                  <span class="contact-item-value">Remote & On-Site Available</span>
+                </div>
+              </div>
+              
+              <!-- Social Channels -->
+              <div class="pt-3 border-top border-secondary-subtle mt-4">
+                <h4 class="contact-social-title">Social Handshake</h4>
+                <div class="contact-social-icons">
+                  <a href="https://github.com/RashmiKumari13" target="_blank" class="social-icon-btn" aria-label="GitHub Profile Link"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://linkedin.com/in/rashmikumari13" target="_blank" class="social-icon-btn" aria-label="LinkedIn Profile Link"><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="mailto:rashmikumari132001@gmail.com" class="social-icon-btn" aria-label="Email Direct Link"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Web Form -->
+          <div class="col-lg-7">
+            <div class="glass-panel contact-form-wrapper">
+              <form id="contactForm" novalidate>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group-custom">
+                      <input type="text" id="contactName" class="form-control form-control-custom w-100" placeholder=" " required>
+                      <label for="contactName" class="form-label-custom">Full Name</label>
+                      <div class="invalid-feedback text-danger mt-1 small">Please provide your name.</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group-custom">
+                      <input type="email" id="contactEmail" class="form-control form-control-custom w-100" placeholder=" " required>
+                      <label for="contactEmail" class="form-label-custom">Email Address</label>
+                      <div class="invalid-feedback text-danger mt-1 small">Please provide a valid email.</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group-custom">
+                  <input type="text" id="contactSubject" class="form-control form-control-custom w-100" placeholder=" " required>
+                  <label for="contactSubject" class="form-label-custom">Subject Topic</label>
+                  <div class="invalid-feedback text-danger mt-1 small">Please enter a subject.</div>
+                </div>
+                
+                <div class="form-group-custom">
+                  <textarea id="contactMessage" class="form-control form-control-custom w-100" rows="5" placeholder=" " required></textarea>
+                  <label for="contactMessage" class="form-label-custom">Detailed Message...</label>
+                  <div class="invalid-feedback text-danger mt-1 small">Please type your message.</div>
+                </div>
+                
+                <button type="submit" class="btn-glow-primary w-100 d-flex justify-content-center align-items-center gap-2" id="submitFormBtn">
+                  <span>Send Message</span>
+                  <i class="bi bi-send-fill fs-6"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <a class="footer-logo" href="#home">Rashmi.Dev</a>
+      <ul class="footer-nav">
+        <li><a class="footer-nav-link" href="#home">Home</a></li>
+        <li><a class="footer-nav-link" href="#skills">Skills</a></li>
+        <li><a class="footer-nav-link" href="#projects">Projects</a></li>
+        <li><a class="footer-nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">
+        &copy; 2026 Rashmi Kumari. Engineered with passion and Bootstrap 5. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <button class="btn-scroll-top" id="scrollTopBtn" aria-label="Scroll back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Success Toast Alert -->
+  <div class="toast-custom" id="formToast" role="alert" aria-live="assertive" aria-atomic="true">
+    <i class="bi bi-patch-check-fill text-success fs-4"></i>
+    <div>
+      <h6 class="mb-0 text-white fw-bold">Message Transmitted!</h6>
+      <small class="text-secondary">Thank you, I'll get back to you shortly.</small>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6Rzsn9gqMqv5KyMjHN35ily+0TGL3MEO71HN8rgl3gSEvi+u7351VTUR753OPlan" crossorigin="anonymous"></script>
+
+  <!-- Custom Core Javascript -->
+  <script src="script.js"></script>
+</body>
+</html>
